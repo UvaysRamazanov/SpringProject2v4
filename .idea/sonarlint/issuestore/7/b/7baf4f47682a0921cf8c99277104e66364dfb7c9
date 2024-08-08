@@ -1,0 +1,8 @@
+
+å	java:S117"QRename this local variable to match the regular expression '^[a-z][a-zA-Z0-9]*$'.(¨åÃßJ$747bc151-2f27-44c0-a3d6-88e5ce287e60
+Ç
+java:S1192"FDefine a constant instead of duplicating this literal "books" 3 times.(µòã–J$fc384e3f-7058-4cb2-bfd0-1891f86e5a10
+í
+java:S1192;"ODefine a constant instead of duplicating this literal "redirect:/book" 3 times.(€íÜ»8ù≤Á˘Ç2J$e4850100-6b09-47ed-8198-60ba51b460fe
+n
+java:S6814"2Convert this optional parameter to an Object type.(â÷‡õJ$41eebb31-d4aa-4512-9b67-359217e49513
