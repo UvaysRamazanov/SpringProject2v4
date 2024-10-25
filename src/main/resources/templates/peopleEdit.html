@@ -3,21 +3,21 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-    <title>Update person</title>
+    <title>Update Person</title>
 </head>
 <body>
+<form th:method="PATCH" th:action="@{/people/{id}(id=${person.id})}" th:object="${person}">
+    <label for="fullName">Enter Full Name</label>
+    <input type="text" th:field="*{name}" id="fullName"/>
+    <div style="color:red" th:if="${#fields.hasErrors('name')}" th:errors="*{name}">Name errors</div>
+    <br/>
 
-<form th:method="PATCH" th:action="@{/people/{id} (id=${person.getId()})}" th:object="${person}">
-    <label for="fullName">Enter fullName</label>
-    <input type="text" th:field="*{fullName}" id="fullName"/>
-    <div style="color:red" th:if="${#fields.hasErrors('fullName')}" th:errors="*{fullName}">fullName errors</div>
+    <label for="year">Enter Year of Birth</label>
+    <input type="text" th:field="*{yearOfBirth}" id="year"/>
+    <div style="color:red" th:if="${#fields.hasErrors('yearOfBirth')}" th:errors="*{yearOfBirth}">Year errors</div>
     <br/>
-    <label for="year">Enter year</label>
-    <input type="text" th:field="*{year}" id="year">
-    <div style="color:red" th:if="${#fields.hasErrors('year')}" th:errors="*{year}">year errors</div>
-    <br/>
-    <input type="submit" VALUE="Update!">
+
+    <input type="submit" value="Update!"/>
 </form>
-
 </body>
 </html>

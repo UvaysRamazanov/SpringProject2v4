@@ -3,41 +3,32 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
-  <title>Title</title>
+  <title>Search Books</title>
 </head>
 <body>
-
 <form th:method="POST" th:action="@{/book/search}">
-
-  <label for="name" >Enter a search query: </label>
-  <input type="text" name="query" id="name"><!--  Мол всё что вводим здесь помещ-ся в name и отправляется как параметр метода -->
+  <label for="query">Enter a search query: </label>
+  <input type="text" name="query" id="query">
   <br/>
 
-  <input type="submit" VALUE="Search!">
+  <input type="submit" value="Search!">
 </form>
 <br/>
 
-<div th:if="${books}">
-
+<div th:if="${not #lists.isEmpty(books)}">
   <div th:if="${books.isEmpty()}">
-    <span>Book not found</span>
+    <span>No books found</span>
   </div>
-
   <div th:each="book : ${books}">
-
-    <p th:text="${book.getName()+', '+ book.getAuthor()+', '+ book.getYear()}">Book</p>
-
-    <div th:if="${book.getOwner()!=null}">
-      <span>The book is now at: </span> <span th:text="${book.getOwner().getFullName()}">Person name</span>
+    <p th:text="${book.title + ', ' + book.author + ', ' + book.yearOfRelease}">Book</p>
+    <div th:if="${book.owner != null}">
+      <span>The book is currently with: </span> <span th:text="${book.owner.name}">Owner name</span>
     </div>
-
-    <div th:if="${book.getOwner()==null}">
-      <span> The book is free </span>
+    <div th:if="${book.owner == null}">
+      <span>This book is available</span>
     </div>
   </div>
   <br/>
-
 </div>
-
 </body>
 </html>

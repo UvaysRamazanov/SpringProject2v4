@@ -6,7 +6,7 @@ import org.springframework.validation.Errors;
 import org.springframework.validation.Validator;
 
 @Component
-public class BooksValidator implements Validator {
+public class BooksValidator implements Validator {  // todo вынести из пакета util в другой пакет
 
     @Override
     public boolean supports(Class<?> aClass) {
